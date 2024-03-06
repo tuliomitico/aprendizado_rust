@@ -1,7 +1,9 @@
 fn main() {
-    let name: &str = "Fabio";
-    let mut age = 42;
-    age+=1;
-    println!("Hello {}!",name);
-    println!("You are {} years old!",age);
+    let number1 = 5;
+    let number2 = 5;
+    if number1 > number2 {
+        println!("{} > {}", number1, number2);
+    } else {
+        println!("{} <= {}", number1, number2);
+    }
 }
