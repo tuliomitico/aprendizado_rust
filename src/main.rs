@@ -4,16 +4,15 @@ fn convert_to_int(data_input: & String) -> i32 {
     let x = data_input.trim().parse::<i32>().unwrap();
     x
 }
-fn main() -> (){
-    let mut soma = 0;
-    let mut valor_entrada = String::new();
-    io::stdin().read_line(&mut valor_entrada).expect("Erro ao ler valor_entrada");
-    let mut valor_i32 = convert_to_int(&valor_entrada);
+fn main() -> () {
 
-    while valor_i32 != 0 {
-        let mut r = valor_i32 % 10;
-        soma = soma + r;
-        valor_i32 = valor_i32 / 10;
+    let mut entrada_fatorial = String::new();
+    io::stdin().read_line(&mut entrada_fatorial).expect("Erro ao ler entrada_fatorial");
+    let mut fatorial: i32= 1;
+    let mut entrada_int = convert_to_int(&entrada_fatorial);
+    while entrada_int > 1 {
+        fatorial = fatorial * entrada_int;
+        entrada_int =  entrada_int - 1;
     }
-    println!("O valor da soma dos digitos {}",soma)
+    println!("O factorial eh {}", fatorial);
 }
