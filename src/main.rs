@@ -5,17 +5,17 @@ fn convert_to_int(data_input: & String) -> i32 {
     x
 }
 fn main() -> () {
-    let mut medias = String::new();
-    io::stdin().read_line(&mut medias).expect("Erro ao ler medias");
-    let mut soma_rec = 0;
-    let mut i = 0; 
-    while convert_to_int(&medias) > i {
-        let mut media_aluno = String::new();
-        io::stdin().read_line(&mut media_aluno).expect("Erro ao ler media_aluno");
-        i += 1;
-        if convert_to_int(&media_aluno) >=3 && convert_to_int(&media_aluno) < 6 {
-            soma_rec += 1;
+    let mut a = String::new();
+    io::stdin().read_line(&mut a).expect("Erro ao ler a");
+    let mut b = String::new();
+    io::stdin().read_line(&mut b).expect("Erro ao ler b");
+    let mut divisao = 0;
+    let mut i = 1; 
+    while i < convert_to_int(&a) && i < convert_to_int( &b) {
+        if convert_to_int( &a) % i == 0 && convert_to_int( &b) % i == 0 {
+            divisao = i;
         }
+        i += 1;
     }
-    println!("O numero de alunos em rec eh {}",soma_rec);
+    println!("O maior divisor comum eh {}",divisao);
 }
