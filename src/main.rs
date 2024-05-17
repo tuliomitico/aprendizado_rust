@@ -12,7 +12,8 @@ fn maior(a: i32, b: i32) -> i32 {
 }
 fn alguma_fn(par_a: f32, par_b: i128) -> f32 {
     println!("Essa função devolve um valor flutuante");
-    10.1
+    let x = 10.1f32 * par_a + par_b as f32; 
+    x
 }
 
 fn main() -> () {
